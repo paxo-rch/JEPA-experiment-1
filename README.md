@@ -1,6 +1,6 @@
 # Unsupervised Representation Learning with Joint Embedding Predictive Architectures (JEPA) on Minecraft
 
-![Minecraft JEPA Training Loss Convergence](images/loss_second_try_stable.png)
+![Minecraft JEPA Training Loss Convergence](images/loss_final.png)
 
 This repository contains research and implementation code for training a **Joint Embedding Predictive Architecture (JEPA)** to learn high-level semantic representations of Minecraft video data without pixel-level supervision. As a 19-year-old student, I designed and conducted these experiments individually as a hands-on project to learn, practice, and explore self-supervised representation learning. To enforce spatial awareness and allow reconstruction tasks, the architecture utilizes **2D Rotary Position Embeddings (RoPE)**. All training runs were conducted on a single **NVIDIA RTX Pro 6000 Blackwell (96GB)** GPU in native `bfloat16` precision. This project investigates the representation capacities of JEPAs, evaluates semantic vs. spatial encoding, and implements techniques to analyze and decode the learned features.
 
@@ -107,7 +107,6 @@ In the final stages, I noticed that when the player opened their inventory, the 
 
 Since the training dataset was composed of continuous gameplay videos at 20fps, successive frames were highly correlated. The encoder overfit to global scene taints (distinguishing the inventory screen from the outdoor world) rather than encoding localized objects.
 - **Future Work:** Train on a dataset composed of highly diverse, uncorrelated, and randomized gameplay screenshots to encourage localized feature extraction.
-![Inventory Overfit Color Taint](images/inventory_taint.png)
 
 ---
 
@@ -136,7 +135,8 @@ Since the training dataset was composed of continuous gameplay videos at 20fps, 
 ├── loss_plotter.py                   # Live matplotlib line chart tracking of loss_history.txt
 ├── loss_history.txt                  # Appended loss values recorded during training
 ├── images/                           # Extracted graphs and visualization figures from PDF report
-│   └── *.png
+│   ├── *.png                         # Includes loss_final.png (Full 137k batches training curve)
+│   └── ...
 │
 ├── encoder_latest.pt                 # Saved weights for the JEPA Encoder
 ├── predictor_latest.pt               # Saved weights for the JEPA Predictor
