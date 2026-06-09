@@ -1,0 +1,9 @@
+# Python cache and temporary files
+__pycache__/
+*.pyc
+
+# Dataset cache files
+cache.csv
+
+# Logs and training history
+loss_history.txt
