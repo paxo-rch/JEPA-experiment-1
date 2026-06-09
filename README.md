@@ -1,5 +1,7 @@
 # Unsupervised Representation Learning with Joint Embedding Predictive Architectures (JEPA) on Minecraft
 
+![Minecraft JEPA Training Loss Convergence](images/loss_second_try_stable.png)
+
 This repository contains research and implementation code for training a **Joint Embedding Predictive Architecture (JEPA)** to learn high-level semantic representations of Minecraft video data without pixel-level supervision. As a 19-year-old student, I designed and conducted these experiments individually as a hands-on project to learn, practice, and explore self-supervised representation learning. To enforce spatial awareness and allow reconstruction tasks, the architecture utilizes **2D Rotary Position Embeddings (RoPE)**. All training runs were conducted on a single **NVIDIA RTX Pro 6000 Blackwell (96GB)** GPU in native `bfloat16` precision. This project investigates the representation capacities of JEPAs, evaluates semantic vs. spatial encoding, and implements techniques to analyze and decode the learned features.
 
 ---
